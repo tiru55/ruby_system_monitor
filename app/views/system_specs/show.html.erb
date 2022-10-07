@@ -1,0 +1,196 @@
+<body style="background-color: #e5e5e5">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-12 px-3">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-12 mb-5 d-flex justify-content-center">
+                    <% if @system_spec.manufacturer.include?("Dell")  %>
+                      <%= image_tag 'dell.png',style: "width:100px;height: 100px" %>
+                    <% elsif @system_spec.manufacturer.include?("Hp") %>
+                      <%= image_tag 'hp.png',style: "width:150px;height: 150px" %>
+                    <% elsif @system_spec.manufacturer.include?("Lenovo") %>
+                      <%= image_tag 'lenovo.png',style: "width:250px;height: 100px" %>
+                    <% end %>
+                  </div>
+                  <div class="col-6 mb-2"><span class="fw-bold">Manufacturer:</span></div>
+                  <div class="col-6 mb-2"><%= @system_spec.manufacturer %></div>
+                  <div class="col-6 mb-2"><span class="fw-bold">Model:</span></div>
+                  <div class="col-6 mb-2"><%= @system_spec.product_name %></div>
+                  <div class="col-6 mb-2"><span class="fw-bold">Serial Number:</span></div>
+                  <div class="col-6 mb-2"><%= @system_spec.serial_number %></div>
+                  <div class="col-6 mb-2">
+                    <span class="fw-bold">System UID:</span>
+                  </div>
+                  <div class="col-6 mb-2">
+                    <%= @system_spec.system_uuid %>
+                  </div>
+                  <div class="col-6 mb-2">
+                    <span class="fw-bold">BIOS Vendor:</span>
+                  </div>
+                  <div class="col-6 mb-2">
+                    <%= @system_spec.bios_vendor %>
+                  </div>
+                  <div class="col-6 mb-2">
+                    <span class="fw-bold">BIOS Version:</span>
+                  </div>
+                  <div class="col-6 mb-2">
+                    <%= @system_spec.bios_version %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+              <div class="row mb-2">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-6 mb-3"><span class="fw-bold">IP Address:</span></div>
+                            <div class="col-6 mb-3"><%= @system_spec.ip_address %></div>
+                            <div class="col-6 mb-3"><span class="fw-bold">MAC Address:</span></div>
+                            <div class="col-6 mb-3"><%= @system_spec.macaddress %></div>
+                            <div class="col-6 mb-3"><span class="fw-bold">Host Name:</span></div>
+                            <div class="col-6 mb-3"><%= @system_spec.hostname %></div>
+                            <div class="col-6 mb-3"><span class="fw-bold">User Name:</span></div>
+                            <div class="col-6 mb-3"><%= @system_spec.username %></div>        
+                          </div>
+                        </div>
+                      </div>
+              </div>
+              <div class="row">
+                <div class="card">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                                  <% if @system_spec.distribution.include?("Ubuntu") %>
+                                    <%= image_tag 'ubuntu.svg',class: "rounded-5" %>
+                                  <% end %>
+                            </div>
+                            <div class="col-md-8 d-flex justify-content-center align-items-center">
+                              <div class="row">
+                                 <div class="col-6 mb-2"><span class="fw-bold">OS:</span></div>
+                            <div class="col-6 mb-2"><%= @system_spec.operating_system %></div>
+                            <div class="col-6 mb-2"><span class="fw-bold">OS Family:</span></div>
+                            <div class="col-6 mb-2"><%= @system_spec.os_family %></div>
+                            <div class="col-6 mb-2"><span class="fw-bold">Distribution:</span></div>
+                            <div class="col-6 mb-2"><%= @system_spec.distribution %></div>
+                            <div class="col-6 mb-2"><span class="fw-bold">Codename:</span></div>
+                            <div class="col-6 mb-2"><%= @system_spec.distribution_codename %></div>        
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-6 mb-3"><span class="fw-bold">Kernel:</span></div>
+                  <div class="col-6 mb-3"><%= @system_spec.kernel %></div>
+                  <div class="col-6 mb-3"><span class="fw-bold">Kernel Version:</span></div>
+                  <div class="col-6 mb-3"><%= @system_spec.kernel_version %></div>
+                  <div class="col-6 mb-3"><span class="fw-bold">Total Ram:</span></div>
+                  <div class="col-6 mb-3"><%= @system_spec.total_memory %></div>
+                  <div class="col-6 mb-3"><span class="fw-bold">Total Swap:</span></div>
+                  <div class="col-6 mb-3"><%= @system_spec.total_swap %></div>   
+                  <div class="col-6 mb-3"><span class="fw-bold">Total Storage:</span></div>
+                  <div class="col-6 mb-3">
+                                    <!-- Button trigger modal -->
+                  <a type="button" class="text-decoration-none" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <%= @system_spec.total_storage %>
+                  </a>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Storage Info</h5>
+                          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="">
+                          <div>
+                            <canvas id="myChart"></canvas>
+                          </div>
+ 
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  </div>
+                  <div class="col-6 mb-3"><span class="fw-bold">Storage Free:</span></div>
+                  <div class="col-6 mb-3"><%= @system_spec.free_space %></div> 
+                  <div class="col-6 mb-3"><span class="fw-bold">Architecture:</span></div>
+                  <div class="col-6 mb-3"><%= @system_spec.architecture %></div>
+                  <div class="col-6 mb-3"><span class="fw-bold">CPU Architecture:</span></div>
+                  <div class="col-6 mb-3"><%= @system_spec.cpu_architecture %></div>
+                  <div class="col-6 mb-3"><span class="fw-bold">Processor Manufacturer:</span></div>
+                  <div class="col-6 mb-3"><%= @system_spec.processor_manufacturer %></div>
+                  <div class="col-6 mb-3"><span class="fw-bold">Processor Family:</span></div>
+                  <div class="col-6 mb-3"><%= @system_spec.processor_family %></div>
+                  <div class="col-6 mb-3"><span class="fw-bold">Processor Version:</span></div>
+                  <div class="col-6 mb-3"><%= @system_spec.processor_version %></div>
+                  <div class="col-6 mb-3"><span class="fw-bold">Processor Cores:</span></div>
+                  <div class="col-6 mb-3"><%= @system_spec.processor_core_count %></div>
+                  <div class="col-6 mb-3"><span class="fw-bold">Processor Freqeuncy:</span></div>
+                  <div class="col-6 mb-3"><%= @system_spec.processor_frequency %></div>
+                  <div class="col-6 mb-3"><span class="fw-bold">Processor Cores:</span></div>
+                  <div class="col-6 mb-3"><%= @system_spec.processor_core_count %></div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  var total_storage = "<%= @system_spec.total_storage %>";
+  total_storage = total_storage.substring(0, total_storage.length - 2);
+  var storage_used = "<%= @system_spec.storage_used %>"
+  storage_used = storage_used.substring(0,storage_used.length - 2);
+  var storage_free = "<%= @system_spec.free_space %>"
+  storage_free = storage_free.substring(0,storage_free.length - 2);
+  const data = {
+  labels: [
+    'Total Storage',
+    'Storage Used',
+    'Free Storage'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [total_storage, storage_used, storage_free],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)'
+    ],
+    hoverOffset: 4
+  }]
+};
+</script>
+ <script>
+  const config = {
+  type: 'doughnut',
+  data: data,
+};
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+
+</script>
+

@@ -1,0 +1,152 @@
+<%= form_with(model: system_spec) do |form| %>
+  <% if system_spec.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(system_spec.errors.count, "error") %> prohibited this system_spec from being saved:</h2>
+
+      <ul>
+        <% system_spec.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ip_address %>
+    <%= form.text_field :ip_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :macaddress %>
+    <%= form.text_field :macaddress %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hostname %>
+    <%= form.text_field :hostname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :manufacturer %>
+    <%= form.text_field :manufacturer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :operating_system %>
+    <%= form.text_field :operating_system %>
+  </div>
+
+  <div class="field">
+    <%= form.label :os_family %>
+    <%= form.text_field :os_family %>
+  </div>
+
+  <div class="field">
+    <%= form.label :distribution %>
+    <%= form.text_field :distribution %>
+  </div>
+
+  <div class="field">
+    <%= form.label :distribution_codename %>
+    <%= form.text_field :distribution_codename %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kernel %>
+    <%= form.text_field :kernel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kernel_version %>
+    <%= form.text_field :kernel_version %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_memory %>
+    <%= form.text_field :total_memory %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_swap %>
+    <%= form.text_field :total_swap %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_storage %>
+    <%= form.text_field :total_storage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :free_space %>
+    <%= form.text_field :free_space %>
+  </div>
+
+  <div class="field">
+    <%= form.label :architecture %>
+    <%= form.text_field :architecture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpu_architecture %>
+    <%= form.text_field :cpu_architecture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :processor_family %>
+    <%= form.text_field :processor_family %>
+  </div>
+
+  <div class="field">
+    <%= form.label :processor_manufacturer %>
+    <%= form.text_field :processor_manufacturer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :processor_version %>
+    <%= form.text_field :processor_version %>
+  </div>
+
+  <div class="field">
+    <%= form.label :processor_core_count %>
+    <%= form.text_field :processor_core_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :processor_frequency %>
+    <%= form.text_field :processor_frequency %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bios_vendor %>
+    <%= form.text_field :bios_vendor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bios_version %>
+    <%= form.text_field :bios_version %>
+  </div>
+
+  <div class="field">
+    <%= form.label :serial_number %>
+    <%= form.text_field :serial_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_name %>
+    <%= form.text_field :product_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :system_uuid %>
+    <%= form.text_field :system_uuid %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

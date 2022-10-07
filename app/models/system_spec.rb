@@ -1,0 +1,2 @@
+class SystemSpec < ApplicationRecord
+end

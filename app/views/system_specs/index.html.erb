@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<h1>System Specs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ip address</th>
+      <th>Macaddress</th>
+      <th>Hostname</th>
+      <th>Username</th>
+      <th>Manufacturer</th>
+      <th>Operating system</th>
+      <th>Os family</th>
+      <th>Distribution</th>
+      <th>Distribution codename</th>
+      <th>Kernel</th>
+      <th>Kernel version</th>
+      <th>Total memory</th>
+      <th>Total swap</th>
+      <th>Total storage</th>
+      <th>Free space</th>
+      <th>Architecture</th>
+      <th>Cpu architecture</th>
+      <th>Processor family</th>
+      <th>Processor manufacturer</th>
+      <th>Processor version</th>
+      <th>Processor core count</th>
+      <th>Processor frequency</th>
+      <th>Bios vendor</th>
+      <th>Bios version</th>
+      <th>Serial number</th>
+      <th>Product name</th>
+      <th>System uuid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @system_specs.each do |system_spec| %>
+      <tr>
+        <td><%= system_spec.ip_address %></td>
+        <td><%= system_spec.macaddress %></td>
+        <td><%= system_spec.hostname %></td>
+        <td><%= system_spec.username %></td>
+        <td><%= system_spec.manufacturer %></td>
+        <td><%= system_spec.operating_system %></td>
+        <td><%= system_spec.os_family %></td>
+        <td><%= system_spec.distribution %></td>
+        <td><%= system_spec.distribution_codename %></td>
+        <td><%= system_spec.kernel %></td>
+        <td><%= system_spec.kernel_version %></td>
+        <td><%= system_spec.total_memory %></td>
+        <td><%= system_spec.total_swap %></td>
+        <td><%= system_spec.total_storage %></td>
+        <td><%= system_spec.free_space %></td>
+        <td><%= system_spec.architecture %></td>
+        <td><%= system_spec.cpu_architecture %></td>
+        <td><%= system_spec.processor_family %></td>
+        <td><%= system_spec.processor_manufacturer %></td>
+        <td><%= system_spec.processor_version %></td>
+        <td><%= system_spec.processor_core_count %></td>
+        <td><%= system_spec.processor_frequency %></td>
+        <td><%= system_spec.bios_vendor %></td>
+        <td><%= system_spec.bios_version %></td>
+        <td><%= system_spec.serial_number %></td>
+        <td><%= system_spec.product_name %></td>
+        <td><%= system_spec.system_uuid %></td>
+        <td><%= link_to 'Show', system_spec %></td>
+        <td><%= link_to 'Edit', edit_system_spec_path(system_spec) %></td>
+        <td><%= link_to 'Destroy', system_spec, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New System Spec', new_system_spec_path %>

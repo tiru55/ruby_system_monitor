@@ -1,0 +1,59 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ip_address: MyString
+  macaddress: MyString
+  hostname: MyString
+  username: MyString
+  manufacturer: MyString
+  operating_system: MyString
+  os_family: MyString
+  distribution: MyString
+  distribution_codename: MyString
+  kernel: MyString
+  kernel_version: MyString
+  total_memory: MyString
+  total_swap: MyString
+  total_storage: MyString
+  free_space: MyString
+  architecture: MyString
+  cpu_architecture: MyString
+  processor_family: MyString
+  processor_manufacturer: MyString
+  processor_version: MyString
+  processor_core_count: MyString
+  processor_frequency: MyString
+  bios_vendor: MyString
+  bios_version: MyString
+  serial_number: MyString
+  product_name: MyString
+  system_uuid: MyString
+
+two:
+  ip_address: MyString
+  macaddress: MyString
+  hostname: MyString
+  username: MyString
+  manufacturer: MyString
+  operating_system: MyString
+  os_family: MyString
+  distribution: MyString
+  distribution_codename: MyString
+  kernel: MyString
+  kernel_version: MyString
+  total_memory: MyString
+  total_swap: MyString
+  total_storage: MyString
+  free_space: MyString
+  architecture: MyString
+  cpu_architecture: MyString
+  processor_family: MyString
+  processor_manufacturer: MyString
+  processor_version: MyString
+  processor_core_count: MyString
+  processor_frequency: MyString
+  bios_vendor: MyString
+  bios_version: MyString
+  serial_number: MyString
+  product_name: MyString
+  system_uuid: MyString

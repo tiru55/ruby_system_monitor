@@ -1,0 +1,2 @@
+json.extract! system_spec, :id, :ip_address, :macaddress, :hostname, :username, :manufacturer, :operating_system, :os_family, :distribution, :distribution_codename, :kernel, :kernel_version, :total_memory, :total_swap, :total_storage, :free_space, :architecture, :cpu_architecture, :processor_family, :processor_manufacturer, :processor_version, :processor_core_count, :processor_frequency, :bios_vendor, :bios_version, :serial_number, :product_name, :system_uuid, :created_at, :updated_at
+json.url system_spec_url(system_spec, format: :json)
